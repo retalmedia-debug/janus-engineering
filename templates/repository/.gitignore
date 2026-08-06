@@ -1,0 +1,46 @@
+# Template: janus-engineering@{{JANUS_SUITE_VERSION}}/templates/repository/.gitignore
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Editor
+.vscode/settings.json
+.idea/
+*.swp
+*.swo
+
+# Node
+node_modules/
+.pnpm-store/
+
+# Build
+dist/
+build/
+.next/
+.nuxt/
+out/
+
+# Environment — never commit
+.env
+.env.local
+.env.*.local
+
+# Logs
+*.log
+logs/
+
+# Test artifacts
+coverage/
+.nyc_output/
+
+# Type generation artifacts
+*.d.ts.map
+
+# Supabase local
+supabase/.temp/
+supabase/functions/.eszip
+
+# Temp
+*.tmp
+*.bak

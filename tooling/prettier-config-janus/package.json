@@ -1,0 +1,39 @@
+{
+  "name": "@janus/prettier-config",
+  "version": "1.0.0",
+  "description": "JANUS ecosystem Prettier configuration",
+  "main": "index.json",
+  "files": ["index.json"],
+  "keywords": ["prettier", "config", "janus"],
+  "license": "UNLICENSED",
+  "peerDependencies": {
+    "prettier": ">=3.0.0"
+  },
+  "prettier": "@janus/prettier-config",
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com"
+  },
+  "semi": false,
+  "singleQuote": true,
+  "trailingComma": "all",
+  "printWidth": 100,
+  "tabWidth": 2,
+  "useTabs": false,
+  "bracketSpacing": true,
+  "arrowParens": "always",
+  "endOfLine": "lf",
+  "overrides": [
+    {
+      "files": "*.json",
+      "options": { "printWidth": 80 }
+    },
+    {
+      "files": "*.md",
+      "options": { "printWidth": 120, "proseWrap": "always" }
+    },
+    {
+      "files": "*.sql",
+      "options": { "printWidth": 120 }
+    }
+  ]
+}

@@ -1,0 +1,126 @@
+# ATLAS Compliance Record
+# Service: ATLAS (atlas-v1)
+# Updated: 2026-08-06
+
+service: atlas-v1
+suite_version: "1.0.0"
+compliance_status: in-progress
+last_checked: "2026-08-06"
+
+mandatory_requirements:
+  # Standards
+  - id: git-strategy
+    standard: standards/engineering/git-strategy.md
+    status: compliant
+    notes: GitFlow strategy implemented in docs/governance/branching-strategy.md
+
+  - id: dependency-governance
+    standard: standards/engineering/dependency-governance.md
+    status: compliant
+    notes: Implemented in docs/governance/dependency-governance.md
+
+  - id: technical-debt-policy
+    standard: standards/engineering/technical-debt-policy.md
+    status: compliant
+    notes: Implemented in docs/governance/technical-debt-policy.md
+
+  - id: package-manager
+    standard: standards/engineering/package-manager-standard.md
+    status: pending
+    notes: pnpm not yet configured — no package.json exists (pre-implementation phase)
+
+  - id: linting
+    standard: standards/engineering/linting-standard.md
+    status: pending
+    notes: No application code yet — @janus/eslint-config to be added at implementation phase
+
+  - id: formatter
+    standard: standards/engineering/formatter-standard.md
+    status: pending
+    notes: No application code yet
+
+  - id: engineering-principles
+    standard: standards/architecture/engineering-principles.md
+    status: compliant
+    notes: Documented in docs/architecture/engineering-principles.md with ATLAS domain principle
+
+  - id: architectural-order
+    standard: standards/architecture/architectural-order.md
+    status: compliant
+    notes: Followed in docs/governance/development-workflow.md
+
+  - id: adr-format
+    standard: standards/architecture/adr-format.md
+    status: compliant
+    notes: ADR-0001, ADR-0002, ADR-0003 created in docs/architecture/adr/
+
+  - id: documentation-strategy
+    standard: standards/documentation/documentation-strategy.md
+    status: compliant
+    notes: Implemented in docs/documentation/documentation-strategy.md
+
+  - id: documentation-lifecycle
+    standard: standards/documentation/documentation-lifecycle.md
+    status: compliant
+    notes: Implemented in docs/documentation/documentation-lifecycle.md
+
+  - id: testing-philosophy
+    standard: standards/testing/testing-philosophy.md
+    status: compliant
+    notes: Implemented in docs/testing/testing-strategy.md
+
+  - id: security-baseline
+    standard: standards/security/security-baseline.md
+    status: compliant
+    notes: Implemented in docs/security/security-baseline.md
+
+  - id: logging-standard
+    standard: standards/operations/logging-standard.md
+    status: compliant
+    notes: Implemented in docs/operations/logging-standards.md
+
+  - id: error-handling-standard
+    standard: standards/operations/error-handling-standard.md
+    status: compliant
+    notes: Implemented in docs/operations/error-handling-standards.md
+
+  - id: api-design-standard
+    standard: standards/api/api-design-standard.md
+    status: compliant
+    notes: Implemented in docs/api/api-governance.md
+
+  - id: ai-collaboration-rules
+    standard: standards/ai-collaboration/ai-collaboration-rules.md
+    status: compliant
+    notes: Implemented in docs/ai-collaboration/ai-collaboration-rules.md
+
+  - id: human-responsibilities
+    standard: standards/ai-collaboration/human-responsibilities.md
+    status: compliant
+    notes: Implemented in docs/ai-collaboration/human-responsibilities.md
+
+  - id: chatgpt-responsibilities
+    standard: standards/ai-collaboration/chatgpt-responsibilities.md
+    status: compliant
+    notes: Implemented in docs/ai-collaboration/chatgpt-responsibilities.md
+
+mandatory_if_applicable:
+  - id: typescript-baseline
+    standard: standards/engineering/typescript-baseline.md
+    applicable: true
+    status: pending
+    notes: TypeScript will be used; @janus/tsconfig to be added at implementation
+
+  - id: supabase-migration-governance
+    standard: standards/database/supabase-migration-governance.md
+    applicable: true
+    status: compliant
+    notes: Implemented in docs/database/migration-governance.md
+
+compliance_exceptions: []
+
+open_items:
+  - Package manager (pnpm) configuration — pre-implementation, expected at Phase 8
+  - ESLint / TypeScript / Prettier tooling — pre-implementation, expected at Phase 8
+  - CLAUDE.md — pre-existing, needs update to reference janus-engineering@1.0.0 standards URLs
+  - ADR-0001 in atlas-v1 documents the polyrepo strategy; the authoritative version is now ADR-E001 in janus-engineering — ATLAS ADR-0001 should be updated to reference the ecosystem ADR

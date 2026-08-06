@@ -1,0 +1,21 @@
+{
+  "name": "@janus/commitlint-config",
+  "version": "1.0.0",
+  "description": "JANUS ecosystem commitlint configuration",
+  "main": "index.js",
+  "type": "module",
+  "files": ["index.js"],
+  "keywords": ["commitlint", "config", "janus"],
+  "license": "UNLICENSED",
+  "peerDependencies": {
+    "@commitlint/cli": ">=19.0.0",
+    "@commitlint/config-conventional": ">=19.0.0"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^19.0.0",
+    "@commitlint/config-conventional": "^19.0.0"
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com"
+  }
+}

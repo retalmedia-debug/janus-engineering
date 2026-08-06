@@ -1,0 +1,14 @@
+{
+  "name": "@janus/tsconfig",
+  "version": "1.0.0",
+  "description": "JANUS ecosystem TypeScript configuration",
+  "files": ["base.json", "strict.json"],
+  "keywords": ["typescript", "tsconfig", "janus"],
+  "license": "UNLICENSED",
+  "peerDependencies": {
+    "typescript": ">=5.3.0"
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com"
+  }
+}

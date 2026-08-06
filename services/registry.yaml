@@ -1,0 +1,111 @@
+# JANUS Service Registry
+# Maintained by the JANUS Architecture Council
+# Add services via PR using the service-registration.md issue template
+
+services:
+  - name: ATLAS
+    identifier: atlas
+    repository: atlas-v1
+    domain: Geo Intelligence and External Intelligence
+    description: Geospatial monitoring, geofence management, alert processing, and external intelligence ingestion
+    csa: Mr. Don
+    suite_version: "1.0.0"
+    status: governance-establishment
+    created_date: "2026-08-05"
+    technologies:
+      backend: Supabase (PostgreSQL + PostGIS + Edge Functions)
+      frontend: TBD (ADR pending)
+    integrations: []
+    compliance_file: compliance/atlas-v1.yaml
+    notes: First JANUS service. janus-engineering was designed with ATLAS as the primary consumer.
+
+  - name: VENUS
+    identifier: venus
+    repository: venus-v1
+    domain: Reserved
+    description: TBD
+    csa: TBD
+    suite_version: null
+    status: not-started
+    created_date: null
+    technologies: {}
+    integrations: []
+    compliance_file: null
+
+  - name: NARCOS
+    identifier: narcos
+    repository: narcos-v1
+    domain: Reserved
+    description: TBD
+    csa: TBD
+    suite_version: null
+    status: not-started
+    created_date: null
+    technologies: {}
+    integrations: []
+    compliance_file: null
+
+  - name: AURUS
+    identifier: aurus
+    repository: aurus-v1
+    domain: Reserved
+    description: TBD
+    csa: TBD
+    suite_version: null
+    status: not-started
+    created_date: null
+    technologies: {}
+    integrations: []
+    compliance_file: null
+
+  - name: CRONOS
+    identifier: cronos
+    repository: cronos-v1
+    domain: Reserved
+    description: TBD
+    csa: TBD
+    suite_version: null
+    status: not-started
+    created_date: null
+    technologies: {}
+    integrations: []
+    compliance_file: null
+
+  - name: GCS
+    identifier: gcs
+    repository: gcs-v1
+    domain: Reserved
+    description: TBD
+    csa: TBD
+    suite_version: null
+    status: not-started
+    created_date: null
+    technologies: {}
+    integrations: []
+    compliance_file: null
+
+  - name: HERA
+    identifier: hera
+    repository: hera-v1
+    domain: Reserved
+    description: TBD
+    csa: TBD
+    suite_version: null
+    status: not-started
+    created_date: null
+    technologies: {}
+    integrations: []
+    compliance_file: null
+
+# Status values:
+#   not-started          — service not yet proposed
+#   proposed             — domain brief submitted, awaiting JAC review (Phase 0)
+#   approved             — JAC approved the domain, repository not yet created (Gate 0.2 passed)
+#   bootstrapping        — repository scaffolded, governance in progress (Phase 1-2)
+#   governance-establishment — governance ratified, architecture in progress (Phase 2-3)
+#   architecture         — architecture established, specification in progress (Phase 3-5)
+#   implementation       — implementation authorized and in progress (Phase 6+)
+#   production           — service live in production
+#   maintenance          — service in long-term maintenance, no active feature development
+#   deprecated           — service deprecated, consumers migrating
+#   retired              — service retired and decommissioned

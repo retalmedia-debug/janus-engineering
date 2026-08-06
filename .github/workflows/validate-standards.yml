@@ -1,0 +1,72 @@
+name: Validate Standards
+
+on:
+  push:
+    branches: [main, develop]
+  pull_request:
+    branches: [main, develop]
+
+jobs:
+  validate:
+    name: Validate Standards Documents
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+
+      - name: Verify VERSION file exists and is valid semver
+        run: |
+          VERSION=$(cat VERSION)
+          if ! echo "$VERSION" | grep -qE '^[0-9]+\.[0-9]+\.[0-9]+$'; then
+            echo "Error: VERSION file contains invalid semver: $VERSION"
+            exit 1
+          fi
+          echo "Suite version: $VERSION"
+
+      - name: Verify standards INDEX is up to date
+        run: |
+          # Check that all .md files in standards/ are referenced in standards/INDEX.md
+          MISSING=0
+          while IFS= read -r -d '' file; do
+            filename=$(basename "$file")
+            if ! grep -q "$filename" standards/INDEX.md; then
+              echo "WARNING: $file not referenced in standards/INDEX.md"
+              MISSING=$((MISSING + 1))
+            fi
+          done < <(find standards -name "*.md" ! -name "INDEX.md" -print0)
+          if [ "$MISSING" -gt 0 ]; then
+            echo "$MISSING standard(s) not indexed. Update standards/INDEX.md."
+            exit 1
+          fi
+
+      - name: Verify required document headers
+        run: |
+          FAILURES=0
+          while IFS= read -r -d '' file; do
+            if ! grep -q "Suite Version:" "$file" && ! grep -q "Version:" "$file"; then
+              echo "FAIL: Missing version header in $file"
+              FAILURES=$((FAILURES + 1))
+            fi
+            if ! grep -q "Status:" "$file"; then
+              echo "FAIL: Missing Status header in $file"
+              FAILURES=$((FAILURES + 1))
+            fi
+          done < <(find standards docs -name "*.md" ! -name "INDEX.md" ! -name "README.md" -print0)
+          if [ "$FAILURES" -gt 0 ]; then
+            echo "$FAILURES document(s) missing required headers."
+            exit 1
+          fi
+
+      - name: Check for unfilled placeholders in standards
+        run: |
+          if grep -r "{{SERVICE_NAME}}\|{{SERVICE_REPO}}\|{{CSA_NAME}}\|\[\[FILL:\|DECISION REQUIRED:" standards/ docs/; then
+            echo "Error: Unfilled placeholders found in standards/ or docs/ — these belong only in templates/"
+            exit 1
+          fi
+
+      - name: Validate CHANGELOG references suite version
+        run: |
+          VERSION=$(cat VERSION)
+          if ! grep -q "\[$VERSION\]" CHANGELOG.md; then
+            echo "Warning: CHANGELOG.md does not contain an entry for suite version $VERSION"
+          fi

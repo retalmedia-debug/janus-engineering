@@ -1,0 +1,30 @@
+# OS artifacts
+.DS_Store
+Thumbs.db
+
+# Editor artifacts
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Node (tooling packages only)
+node_modules/
+.npm/
+
+# Environment files
+.env
+.env.local
+
+# Build output (tooling packages)
+dist/
+build/
+
+# Logs
+*.log
+npm-debug.log*
+
+# Temporary files
+*.tmp
+*.temp
+.cache/
