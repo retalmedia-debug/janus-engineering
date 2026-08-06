@@ -2,6 +2,7 @@
 
 **Suite Version:** 1.0.0
 **Last Updated:** 2026-08-06
+**Count:** 34
 
 All JANUS Engineering Standards are listed here. The `Binding Level` column defines the obligation for each JANUS service.
 
@@ -69,6 +70,7 @@ All JANUS Engineering Standards are listed here. The `Binding Level` column defi
 | [error-handling-standard.md](operations/error-handling-standard.md) | Mandatory | Error taxonomy, response envelope format |
 | [alerting-standard.md](operations/alerting-standard.md) | Mandatory | Mandatory alerts, severity definitions, runbook requirements |
 | [runbook-standard.md](operations/runbook-standard.md) | Mandatory | Runbook format, quality requirements, freshness policy |
+| [observability-standard.md](operations/observability-standard.md) | Mandatory | Three-pillar observability (logs/metrics/traces), mandatory metrics, X-Request-ID contract |
 
 ## Database
 

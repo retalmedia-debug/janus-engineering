@@ -1,0 +1,31 @@
+{
+  "name": "@janus/{{SERVICE_REPO}}",
+  "version": "0.1.0",
+  "description": "[[FILL: one-line service description]]",
+  "private": true,
+  "engines": {
+    "node": ">=20.0.0",
+    "pnpm": ">=9.0.0"
+  },
+  "scripts": {
+    "dev": "[[FILL: development start command]]",
+    "build": "[[FILL: build command]]",
+    "start": "[[FILL: production start command]]",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "typecheck": "tsc --noEmit",
+    "test": "[[FILL: test runner command]]",
+    "test:coverage": "[[FILL: test runner with coverage flag]]"
+  },
+  "devDependencies": {
+    "@janus/commitlint-config": "^1.0.0",
+    "@janus/eslint-config": "^1.0.0",
+    "@janus/prettier-config": "^1.0.0",
+    "@janus/tsconfig": "^1.0.0",
+    "@commitlint/cli": "^19.0.0",
+    "typescript": "^5.0.0"
+  },
+  "prettier": "@janus/prettier-config"
+}

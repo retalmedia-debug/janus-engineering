@@ -19,6 +19,8 @@ Templates are copied at service creation via `scripts/scaffold-service.sh`. Once
 - `.gitignore` — Base JANUS gitignore
 - `.editorconfig` — Frozen — same for all JANUS repos
 - `.janus-compliance.yaml` — Compliance declaration
+- `package.json` — Service package.json stub with @janus dev dependencies and standard scripts
+- `.nvmrc` — Node.js version pin (Node 20 LTS)
 
 **Governance documents** (`docs/governance/`):
 - `repository-governance.md` — Decision matrix, roles, health reviews
@@ -74,6 +76,10 @@ Templates are copied at service creation via `scripts/scaffold-service.sh`. Once
 **API documents** (`docs/api/`):
 - `api-governance.md` — Standard reference + service extensions
 - `error-catalog.md` — Error code catalog format
+- `event-catalog.md` — Event catalog for async events published by this service (CloudEvents format)
+
+**Documentation index** (`docs/`):
+- `INDEX.md` — Complete documentation index template covering all 13 governance, 7 architecture, and other doc sections
 
 **GitHub templates** (`.github/`):
 - `pull_request_template.md`
@@ -82,6 +88,7 @@ Templates are copied at service creation via `scripts/scaffold-service.sh`. Once
 - `ISSUE_TEMPLATE/technical-debt.md`
 - `ISSUE_TEMPLATE/adr-proposal.md`
 - `ISSUE_TEMPLATE/governance-exception.md`
+- `ISSUE_TEMPLATE/integration-request.md` — Cross-service integration request (redirects to janus-engineering)
 
 ---
 

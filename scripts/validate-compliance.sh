@@ -143,6 +143,41 @@ else
 fi
 
 echo ""
+echo -e "${BOLD}[Secret Management Compliance]${NC}"
+
+# Check for common secret anti-patterns in the repository
+# (Only check committed files, not unstaged)
+if git -C "${REPO_PATH}" rev-parse --git-dir > /dev/null 2>&1; then
+  if git -C "${REPO_PATH}" ls-files | xargs grep -l "process\.env\." -- 2>/dev/null | grep -v "node_modules" | grep -v ".md" | head -1 > /dev/null 2>&1; then
+    warn "Direct process.env usage detected — verify secrets are not hardcoded. See secret-management-standard.md"
+  else
+    pass "No obvious secret anti-patterns detected"
+  fi
+
+  # Check for .env files committed
+  if git -C "${REPO_PATH}" ls-files | grep -E "^\.env$" > /dev/null 2>&1; then
+    fail ".env file is tracked by git — remove from tracking and add to .gitignore"
+  else
+    pass ".env not committed to git"
+  fi
+fi
+
+echo ""
+echo -e "${BOLD}[Observability Compliance]${NC}"
+
+if [[ -f "${REPO_PATH}/docs/operations/observability-strategy.md" ]]; then
+  pass "docs/operations/observability-strategy.md exists"
+else
+  warn "docs/operations/observability-strategy.md missing — required before production (observability-standard.md)"
+fi
+
+if [[ -f "${REPO_PATH}/docs/operations/incident-response-runbook.md" ]]; then
+  pass "docs/operations/incident-response-runbook.md exists"
+else
+  warn "docs/operations/incident-response-runbook.md missing — required before production (runbook-standard.md)"
+fi
+
+echo ""
 echo -e "${BOLD}[GitHub Templates]${NC}"
 
 if [[ -f "${REPO_PATH}/.github/pull_request_template.md" ]]; then

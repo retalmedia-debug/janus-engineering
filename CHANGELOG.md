@@ -9,6 +9,31 @@ This repository uses [Semantic Versioning](https://semver.org/spec/v2.0.0.html) 
 
 ## [Unreleased]
 
+### Added — PKG-004 Gap Resolution (2026-08-06)
+
+**Standards**
+- `standards/operations/observability-standard.md` — Three-pillar observability (logs/metrics/traces), 6 mandatory metrics with labels, X-Request-ID propagation contract, health endpoint format, pre-production gate checklist
+
+**Architecture Decision Records**
+- `adr/ecosystem/ADR-E008-supabase-as-database-platform.md` — Formalizes Supabase as ecosystem default database platform (services may deviate with JAC approval)
+
+**Templates — Scaffold Gaps Resolved**
+- `templates/repository/docs/api/event-catalog.md` — Event catalog for async events (required by event-schema-standard, missing from scaffold)
+- `templates/repository/package.json` — Service package.json stub with @janus dev dependencies and standard scripts
+- `templates/repository/.nvmrc` — Node.js 20 LTS version pin
+- `templates/repository/docs/INDEX.md` — Complete documentation index template (all 13 governance + all architecture, engineering, testing, security, operations, database, api, ai-collaboration sections)
+- `templates/repository/.github/ISSUE_TEMPLATE/integration-request.md` — Service-level integration request redirect to janus-engineering
+
+**Tooling READMEs**
+- `tooling/eslint-config-janus/README.md` — @janus/eslint-config installation, usage, non-overridable rules
+- `tooling/tsconfig-janus/README.md` — @janus/tsconfig base.json and strict.json usage, what cannot be disabled
+- `tooling/prettier-config-janus/README.md` — @janus/prettier-config usage (package.json reference only), frozen configuration
+- `tooling/commitlint-config-janus/README.md` — @janus/commitlint-config usage, 13 JANUS commit types
+
+**Index Updates**
+- `standards/INDEX.md` — Updated to 34 standards (was 33); observability-standard added
+- `templates/INDEX.md` — New scaffold files listed: event-catalog.md, package.json, .nvmrc, docs/INDEX.md, integration-request.md
+
 ### Added — Phase 2 (2026-08-06)
 
 **Ecosystem Governance**

@@ -8,7 +8,7 @@
 
 ## Current Package
 
-**PKG-004 — Cross-Reference and Classification Pass**
+**PKG-005 — Tooling Publication Pipeline**
 **Status:** In Progress
 **Started:** 2026-08-06
 
@@ -16,9 +16,24 @@
 
 ## Completed Packages
 
----
+### PKG-004 — Cross-Reference, Classification, and Gap Resolution
+**Completed:** 2026-08-06
 
-## Completed Packages
+Deliverables:
+- `standards/operations/observability-standard.md` — Unified three-pillar observability standard (logs/metrics/traces), 6 mandatory metrics, X-Request-ID propagation, health endpoint contract
+- `adr/ecosystem/ADR-E008-supabase-as-database-platform.md` — Formalizes Supabase as ecosystem default database platform
+- `templates/repository/docs/api/event-catalog.md` — Event catalog template (required by event-schema-standard, was missing from scaffold)
+- `templates/repository/package.json` — Service package.json stub with @janus dependencies and standard scripts
+- `templates/repository/.nvmrc` — Node.js 20 LTS pin
+- `templates/repository/docs/INDEX.md` — Complete documentation index template
+- `templates/repository/.github/ISSUE_TEMPLATE/integration-request.md` — Service-level integration request redirect
+- `tooling/eslint-config-janus/README.md` — @janus/eslint-config package README
+- `tooling/tsconfig-janus/README.md` — @janus/tsconfig package README
+- `tooling/prettier-config-janus/README.md` — @janus/prettier-config package README
+- `tooling/commitlint-config-janus/README.md` — @janus/commitlint-config package README
+- `standards/INDEX.md` — Updated to 34 standards (added observability-standard)
+- `templates/INDEX.md` — Updated with new scaffold files (event-catalog, package.json, .nvmrc, docs/INDEX.md, integration-request)
+- `adr/README.md` — ADR-E007 and ADR-E008 added; next number ADR-E009
 
 ### PKG-003 — Missing Standards and Governance Completion
 **Completed:** 2026-08-06
@@ -75,11 +90,11 @@ Deliverables:
 
 ## Current Objective
 
-Complete the missing engineering governance infrastructure:
-- Missing standards (code review, sprint governance, alerting, runbook, secret management, API events, service sizing)
-- Missing governance docs (cross-service integration, incident management, JAC operations, service deprecation)
-- Missing document templates (RFC, post-mortem, incident report)
-- Missing guides (service scaffolding, JAC onboarding, post-mortem facilitation)
+Build the tooling publication pipeline:
+- GitHub Actions publish workflow for @janus/* packages to GitHub Packages
+- CHANGELOG.md per tooling package
+- Version automation (tag-triggered publish)
+- Peer dependency validation documentation
 
 ---
 
