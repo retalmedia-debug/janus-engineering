@@ -13,22 +13,6 @@ All JANUS Engineering Standards are listed here. The `Binding Level` column defi
 
 ---
 
-## Engineering
-
-| Standard | Binding Level | Description |
-|---|---|---|
-| [git-strategy.md](engineering/git-strategy.md) | Mandatory | Version control philosophy, rebase rules, tagging |
-| [refactoring-policy.md](engineering/refactoring-policy.md) | Mandatory | Refactoring definition, types, when permitted |
-| [long-term-maintenance.md](engineering/long-term-maintenance.md) | Mandatory | Maintenance cadences, dead code, knowledge preservation |
-| [dependency-governance.md](engineering/dependency-governance.md) | Mandatory | Risk classification, evaluation, license policy, vulnerability response |
-| [technical-debt-policy.md](engineering/technical-debt-policy.md) | Mandatory | Debt classification, register, 20% sprint rule |
-| [feature-flag-lifecycle.md](engineering/feature-flag-lifecycle.md) | Mandatory | Flag creation, activation, documentation, retirement |
-| [package-publishing-governance.md](engineering/package-publishing-governance.md) | Mandatory-if-applicable | Publishing, versioning, deprecation for shared packages |
-| [package-manager-standard.md](engineering/package-manager-standard.md) | Mandatory | pnpm as the JANUS standard package manager |
-| [linting-standard.md](engineering/linting-standard.md) | Mandatory | ESLint configuration requirements |
-| [formatter-standard.md](engineering/formatter-standard.md) | Mandatory | Prettier as the JANUS formatter |
-| [typescript-baseline.md](engineering/typescript-baseline.md) | Mandatory-if-applicable | TypeScript compiler options for TypeScript services |
-
 ## Architecture
 
 | Standard | Binding Level | Description |
@@ -36,6 +20,25 @@ All JANUS Engineering Standards are listed here. The `Binding Level` column defi
 | [engineering-principles.md](architecture/engineering-principles.md) | Mandatory | 11 universal engineering principles |
 | [architectural-order.md](architecture/architectural-order.md) | Mandatory | Non-negotiable sequencing: Vision → Optimization |
 | [adr-format.md](architecture/adr-format.md) | Mandatory | ADR format, lifecycle, submission process |
+| [service-sizing-guidance.md](architecture/service-sizing-guidance.md) | Mandatory | When to create a new service vs. extend an existing one |
+
+## Engineering
+
+| Standard | Binding Level | Description |
+|---|---|---|
+| [git-strategy.md](engineering/git-strategy.md) | Mandatory | Version control philosophy, rebase rules, tagging |
+| [code-review-standard.md](engineering/code-review-standard.md) | Mandatory | Review requirements, author/reviewer responsibilities, comment protocol |
+| [refactoring-policy.md](engineering/refactoring-policy.md) | Mandatory | Refactoring definition, types, when permitted |
+| [long-term-maintenance.md](engineering/long-term-maintenance.md) | Mandatory | Maintenance cadences, dead code, knowledge preservation |
+| [dependency-governance.md](engineering/dependency-governance.md) | Mandatory | Risk classification, evaluation, license policy, vulnerability response |
+| [technical-debt-policy.md](engineering/technical-debt-policy.md) | Mandatory | Debt classification, register, 20% sprint rule |
+| [sprint-governance.md](engineering/sprint-governance.md) | Mandatory | Sprint structure, capacity allocation, ceremony requirements |
+| [feature-flag-lifecycle.md](engineering/feature-flag-lifecycle.md) | Mandatory | Flag creation, activation, documentation, retirement |
+| [package-publishing-governance.md](engineering/package-publishing-governance.md) | Mandatory-if-applicable | Publishing, versioning, deprecation for shared packages |
+| [package-manager-standard.md](engineering/package-manager-standard.md) | Mandatory | pnpm as the JANUS standard package manager |
+| [linting-standard.md](engineering/linting-standard.md) | Mandatory | ESLint configuration requirements |
+| [formatter-standard.md](engineering/formatter-standard.md) | Mandatory | Prettier as the JANUS formatter |
+| [typescript-baseline.md](engineering/typescript-baseline.md) | Mandatory-if-applicable | TypeScript compiler options for TypeScript services |
 
 ## Documentation
 
@@ -56,6 +59,7 @@ All JANUS Engineering Standards are listed here. The `Binding Level` column defi
 |---|---|---|
 | [security-baseline.md](security/security-baseline.md) | Mandatory | Universal security categories and minimum requirements |
 | [containerization-standard.md](security/containerization-standard.md) | Mandatory-if-applicable | Base image, non-root user, scanning for containerized services |
+| [secret-management-standard.md](security/secret-management-standard.md) | Mandatory | Secret storage, rotation, breach response, access controls |
 
 ## Operations
 
@@ -63,6 +67,8 @@ All JANUS Engineering Standards are listed here. The `Binding Level` column defi
 |---|---|---|
 | [logging-standard.md](operations/logging-standard.md) | Mandatory | Structured JSON format, required fields, log levels |
 | [error-handling-standard.md](operations/error-handling-standard.md) | Mandatory | Error taxonomy, response envelope format |
+| [alerting-standard.md](operations/alerting-standard.md) | Mandatory | Mandatory alerts, severity definitions, runbook requirements |
+| [runbook-standard.md](operations/runbook-standard.md) | Mandatory | Runbook format, quality requirements, freshness policy |
 
 ## Database
 
@@ -75,6 +81,7 @@ All JANUS Engineering Standards are listed here. The `Binding Level` column defi
 | Standard | Binding Level | Description |
 |---|---|---|
 | [api-design-standard.md](api/api-design-standard.md) | Mandatory | URL patterns, HTTP semantics, response format, versioning |
+| [event-schema-standard.md](api/event-schema-standard.md) | Mandatory-if-applicable | CloudEvents envelope, event type naming, schema versioning |
 
 ## AI Collaboration
 

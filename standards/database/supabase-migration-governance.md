@@ -1,5 +1,6 @@
 # Supabase Migration Governance
 
+**Classification:** [JES] JANUS Engineering Standard
 **Suite Version:** 1.0.0
 **Binding Level:** Mandatory-if-applicable
 **Status:** Active

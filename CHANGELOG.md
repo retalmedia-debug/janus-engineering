@@ -9,6 +9,48 @@ This repository uses [Semantic Versioning](https://semver.org/spec/v2.0.0.html) 
 
 ## [Unreleased]
 
+### Added — Phase 2 (2026-08-06)
+
+**Ecosystem Governance**
+- `docs/governance/ecosystem-service-roadmap.md` — Canonical 10-service implementation sequence (mandatory governance artifact)
+- `docs/governance/cross-service-integration-governance.md` — Inter-service integration approval, contract, and versioning governance
+- `docs/governance/incident-management-policy.md` — Ecosystem-wide incident declaration, severity, communication, post-mortem policy
+- `docs/governance/jac-operating-procedures.md` — JAC meeting cadence, quorum, voting protocol, RFC disposition process
+- `docs/governance/service-deprecation-playbook.md` — Phased service retirement: deprecation notice, migration, data disposition
+- `docs/governance/jac-decisions.md` — Running log of all JAC decisions (founding entries added)
+
+**Standards**
+- `standards/engineering/code-review-standard.md` — Review requirements, author/reviewer responsibilities, PR size policy, turnaround SLAs
+- `standards/engineering/sprint-governance.md` — Sprint structure, capacity allocation (20% debt floor), ceremony requirements, debt sprint trigger
+- `standards/api/event-schema-standard.md` — CloudEvents v1.0 envelope, event type naming convention, schema documentation requirements
+- `standards/operations/alerting-standard.md` — 7 mandatory production alerts, severity definitions, runbook requirements, pre-production gate
+- `standards/operations/runbook-standard.md` — Alert runbook format, quality requirements, freshness policy, audit cadence
+- `standards/security/secret-management-standard.md` — 7 absolute rules, storage requirements, rotation policy, breach response
+- `standards/architecture/service-sizing-guidance.md` — 5 criteria for new service creation, anti-patterns, decision process
+
+**Guides**
+- `docs/guides/how-to-scaffold-a-service.md` — scaffold-service.sh usage, fill-in priority order, initial commit, registry update
+
+**Templates**
+- `templates/documents/rfc/RFC-TEMPLATE.md` — Full RFC document template with JAC disposition section
+- `templates/documents/post-mortem/POST-MORTEM-TEMPLATE.md` — Blameless post-mortem with timeline, root cause, and action items
+- `templates/documents/incident-report/INCIDENT-REPORT-TEMPLATE.md` — Live incident tracking issue template
+
+**Platform Tracking**
+- `docs/WORKLOG.md` — Architect worklog with current package, risks, and architectural decisions
+- `docs/ROADMAP.md` — Engineering package roadmap with status, dependencies, and complexity estimates
+
+**GitHub**
+- `.github/ISSUE_TEMPLATE/integration-request.md` — Cross-service integration request template (Gate 1 of integration governance)
+
+**Service Registry**
+- `services/registry.yaml` — Expanded to 10 services: APOLLO (4), HERMES (5), CRAT (7) added; all services assigned `implementation_sequence` field
+
+**Index Updates**
+- `standards/INDEX.md` — Updated: 33 standards total (was 26)
+- `templates/INDEX.md` — Updated: RFC, post-mortem, incident report templates added
+- `docs/INDEX.md` — Updated: 11 governance docs, 6 guides, 2 platform tracking documents
+
 ---
 
 ## [1.0.0] — 2026-08-06

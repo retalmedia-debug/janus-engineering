@@ -87,14 +87,33 @@ Templates are copied at service creation via `scripts/scaffold-service.sh`. Once
 
 ## Individual Document Templates
 
-`templates/documents/` — Templates for documents added to an existing service mid-lifecycle (not at creation).
+`templates/documents/` — Templates for documents added to an existing service or filed during the service lifecycle.
 
+**ADR:**
 - `adr/ADR-XXXX-template.md` — Copy for each new ADR
+
+**RFC:**
+- `rfc/RFC-TEMPLATE.md` — Copy when filing a standard change RFC with the JAC
+
+**Post-Mortem:**
+- `post-mortem/POST-MORTEM-TEMPLATE.md` — Copy after every P0 or P1 incident
+
+**Incident Report:**
+- `incident-report/INCIDENT-REPORT-TEMPLATE.md` — Open as a GitHub Issue when declaring an incident
+
+---
+
+## GitHub Issue Templates (for janus-engineering itself)
+
+`.github/ISSUE_TEMPLATE/` — Issue templates for changes to the engineering platform:
+- `rfc-standard-change.md` — File an RFC for a standard change or addition
+- `service-registration.md` — Register a new JANUS service (Phase 0, Gate 0.1)
+- `ecosystem-adr-proposal.md` — Propose an ecosystem-level ADR
 
 ---
 
 ## GitHub Workflow Templates
 
-`templates/github/workflows/` — CI/CD workflow templates.
-
+`templates/github/workflows/` — CI/CD workflow templates for JANUS services:
 - `ci-base.yml` — Base CI workflow (compliance, lint, test, security)
+- `compliance-check.yml` — Standalone compliance check with weekly drift detection

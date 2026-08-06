@@ -1,11 +1,15 @@
 # JANUS Service Registry
 # Maintained by the JANUS Architecture Council
-# Add services via PR using the service-registration.md issue template
+# Add services via PR using .github/ISSUE_TEMPLATE/service-registration.md
+# Implementation order is governed by docs/governance/ecosystem-service-roadmap.md
 
 services:
+
+  # ─── Position 1 ─────────────────────────────────────────────────────────────
   - name: ATLAS
     identifier: atlas
     repository: atlas-v1
+    implementation_sequence: 1
     domain: Geo Intelligence and External Intelligence
     description: Geospatial monitoring, geofence management, alert processing, and external intelligence ingestion
     csa: Mr. Don
@@ -17,65 +21,31 @@ services:
       frontend: TBD (ADR pending)
     integrations: []
     compliance_file: compliance/atlas-v1.yaml
-    notes: First JANUS service. janus-engineering was designed with ATLAS as the primary consumer.
+    notes: First JANUS service. Pilot for all standards validation. janus-engineering was designed with ATLAS as primary consumer.
 
-  - name: VENUS
-    identifier: venus
-    repository: venus-v1
-    domain: Reserved
-    description: TBD
-    csa: TBD
-    suite_version: null
-    status: not-started
-    created_date: null
-    technologies: {}
-    integrations: []
-    compliance_file: null
-
-  - name: NARCOS
-    identifier: narcos
-    repository: narcos-v1
-    domain: Reserved
-    description: TBD
-    csa: TBD
-    suite_version: null
-    status: not-started
-    created_date: null
-    technologies: {}
-    integrations: []
-    compliance_file: null
-
-  - name: AURUS
-    identifier: aurus
-    repository: aurus-v1
-    domain: Reserved
-    description: TBD
-    csa: TBD
-    suite_version: null
-    status: not-started
-    created_date: null
-    technologies: {}
-    integrations: []
-    compliance_file: null
-
-  - name: CRONOS
-    identifier: cronos
-    repository: cronos-v1
-    domain: Reserved
-    description: TBD
-    csa: TBD
-    suite_version: null
-    status: not-started
-    created_date: null
-    technologies: {}
-    integrations: []
-    compliance_file: null
-
+  # ─── Position 2 ─────────────────────────────────────────────────────────────
   - name: GCS
     identifier: gcs
     repository: gcs-v1
+    implementation_sequence: 2
+    domain: Reserved — Ground Control System (to be defined in Phase 0 domain brief)
+    description: Platform-layer control plane service. Required operational before intelligence domain services at positions 3-10 may begin implementation.
+    csa: TBD
+    suite_version: null
+    status: not-started
+    created_date: null
+    technologies: {}
+    integrations: []
+    compliance_file: null
+    notes: Position 2 reflects platform dependency. GCS domain brief required at Phase 0 before implementation begins.
+
+  # ─── Position 3 ─────────────────────────────────────────────────────────────
+  - name: VENUS
+    identifier: venus
+    repository: venus-v1
+    implementation_sequence: 3
     domain: Reserved
-    description: TBD
+    description: TBD — domain brief required at Phase 0
     csa: TBD
     suite_version: null
     status: not-started
@@ -84,11 +54,76 @@ services:
     integrations: []
     compliance_file: null
 
+  # ─── Position 4 ─────────────────────────────────────────────────────────────
+  - name: APOLLO
+    identifier: apollo
+    repository: apollo-v1
+    implementation_sequence: 4
+    domain: Reserved
+    description: TBD — domain brief required at Phase 0
+    csa: TBD
+    suite_version: null
+    status: not-started
+    created_date: null
+    technologies: {}
+    integrations: []
+    compliance_file: null
+    notes: New service. Not in original ecosystem registry. Added 2026-08-06 per Architecture Council directive.
+
+  # ─── Position 5 ─────────────────────────────────────────────────────────────
+  - name: HERMES
+    identifier: hermes
+    repository: hermes-v1
+    implementation_sequence: 5
+    domain: Reserved
+    description: TBD — domain brief required at Phase 0
+    csa: TBD
+    suite_version: null
+    status: not-started
+    created_date: null
+    technologies: {}
+    integrations: []
+    compliance_file: null
+    notes: New service. Not in original ecosystem registry. Added 2026-08-06 per Architecture Council directive.
+
+  # ─── Position 6 ─────────────────────────────────────────────────────────────
+  - name: CRONOS
+    identifier: cronos
+    repository: cronos-v1
+    implementation_sequence: 6
+    domain: Reserved
+    description: TBD — domain brief required at Phase 0
+    csa: TBD
+    suite_version: null
+    status: not-started
+    created_date: null
+    technologies: {}
+    integrations: []
+    compliance_file: null
+
+  # ─── Position 7 ─────────────────────────────────────────────────────────────
+  - name: CRAT
+    identifier: crat
+    repository: crat-v1
+    implementation_sequence: 7
+    domain: Reserved
+    description: TBD — domain brief required at Phase 0
+    csa: TBD
+    suite_version: null
+    status: not-started
+    created_date: null
+    technologies: {}
+    integrations: []
+    compliance_file: null
+    notes: New service. Not in original ecosystem registry. Added 2026-08-06 per Architecture Council directive. Independent of GCS — not a replacement.
+
+  # ─── Position 8 ─────────────────────────────────────────────────────────────
   - name: HERA
     identifier: hera
     repository: hera-v1
+    implementation_sequence: 8
     domain: Reserved
-    description: TBD
+    description: TBD — domain brief required at Phase 0
     csa: TBD
     suite_version: null
     status: not-started
@@ -97,7 +132,37 @@ services:
     integrations: []
     compliance_file: null
 
-# Status values:
+  # ─── Position 9 ─────────────────────────────────────────────────────────────
+  - name: AURUS
+    identifier: aurus
+    repository: aurus-v1
+    implementation_sequence: 9
+    domain: Reserved
+    description: TBD — domain brief required at Phase 0
+    csa: TBD
+    suite_version: null
+    status: not-started
+    created_date: null
+    technologies: {}
+    integrations: []
+    compliance_file: null
+
+  # ─── Position 10 ────────────────────────────────────────────────────────────
+  - name: NARCOS
+    identifier: narcos
+    repository: narcos-v1
+    implementation_sequence: 10
+    domain: Reserved
+    description: TBD — domain brief required at Phase 0. Final service in the canonical implementation sequence.
+    csa: TBD
+    suite_version: null
+    status: not-started
+    created_date: null
+    technologies: {}
+    integrations: []
+    compliance_file: null
+
+# ── Status Vocabulary ──────────────────────────────────────────────────────────
 #   not-started          — service not yet proposed
 #   proposed             — domain brief submitted, awaiting JAC review (Phase 0)
 #   approved             — JAC approved the domain, repository not yet created (Gate 0.2 passed)

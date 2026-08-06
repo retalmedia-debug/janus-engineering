@@ -12,39 +12,38 @@
 The JANUS ecosystem is a multi-system intelligence platform. Each system is an independent service with its own domain, data, deployment lifecycle, and team.
 
 ```
-┌─────────────────────────────────────────────────────────────┐
-│                     JANUS Ecosystem                         │
-│                                                             │
-│  ┌─────────┐   ┌─────────┐   ┌─────────┐   ┌─────────┐   │
-│  │  ATLAS  │   │  VENUS  │   │ NARCOS  │   │  AURUS  │   │
-│  │  Geo    │   │   TBD   │   │   TBD   │   │   TBD   │   │
-│  │  Intel  │   │         │   │         │   │         │   │
-│  └─────────┘   └─────────┘   └─────────┘   └─────────┘   │
-│                                                             │
-│  ┌─────────┐   ┌─────────┐   ┌─────────┐                  │
-│  │ CRONOS  │   │   GCS   │   │  HERA   │                  │
-│  │   TBD   │   │   TBD   │   │   TBD   │                  │
-│  └─────────┘   └─────────┘   └─────────┘                  │
-│                                                             │
-│  ─────────────────────────────────────────                  │
-│              janus-engineering                              │
-│         (governance, not a runtime service)                 │
-└─────────────────────────────────────────────────────────────┘
+┌───────────────────────────────────────────────────────────────────┐
+│                        JANUS Ecosystem                            │
+│                                                                   │
+│  ①ATLAS    ②GCS     ③VENUS   ④APOLLO  ⑤HERMES                  │
+│  Geo Intel  Control   TBD      TBD      TBD                      │
+│                                                                   │
+│  ⑥CRONOS   ⑦CRAT    ⑧HERA    ⑨AURUS   ⑩NARCOS                 │
+│  TBD        TBD      TBD      TBD      TBD                       │
+│                                                                   │
+│  ─────────────────────────────────────────────────               │
+│                  janus-engineering                                │
+│            (governance, not a runtime service)                    │
+└───────────────────────────────────────────────────────────────────┘
 ```
+Numbers indicate canonical implementation sequence. See `docs/governance/ecosystem-service-roadmap.md`.
 
 ---
 
 ## Service Registry
 
-| Service | Repository | Domain | Status | CSA |
-|---|---|---|---|---|
-| ATLAS | `atlas-v1` | Geo Intelligence & External Intelligence | governance-establishment | Mr. Don |
-| VENUS | `venus-v1` | TBD | not-started | TBD |
-| NARCOS | `narcos-v1` | TBD | not-started | TBD |
-| AURUS | `aurus-v1` | TBD | not-started | TBD |
-| CRONOS | `cronos-v1` | TBD | not-started | TBD |
-| GCS | `gcs-v1` | TBD | not-started | TBD |
-| HERA | `hera-v1` | TBD | not-started | TBD |
+| # | Service | Repository | Domain | Status | CSA |
+|---|---|---|---|---|---|
+| 1 | ATLAS | `atlas-v1` | Geo Intelligence & External Intelligence | governance-establishment | Mr. Don |
+| 2 | GCS | `gcs-v1` | Ground Control System (TBD — Phase 0 brief required) | not-started | TBD |
+| 3 | VENUS | `venus-v1` | TBD — Phase 0 brief required | not-started | TBD |
+| 4 | APOLLO | `apollo-v1` | TBD — Phase 0 brief required | not-started | TBD |
+| 5 | HERMES | `hermes-v1` | TBD — Phase 0 brief required | not-started | TBD |
+| 6 | CRONOS | `cronos-v1` | TBD — Phase 0 brief required | not-started | TBD |
+| 7 | CRAT | `crat-v1` | TBD — Phase 0 brief required | not-started | TBD |
+| 8 | HERA | `hera-v1` | TBD — Phase 0 brief required | not-started | TBD |
+| 9 | AURUS | `aurus-v1` | TBD — Phase 0 brief required | not-started | TBD |
+| 10 | NARCOS | `narcos-v1` | TBD — Phase 0 brief required | not-started | TBD |
 
 Authoritative registry: `services/registry.yaml`
 

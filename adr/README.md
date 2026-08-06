@@ -24,6 +24,7 @@ This directory contains ecosystem-level and internal Architecture Decision Recor
 | [ADR-E004](ecosystem/ADR-E004-typescript-primary-language.md) | TypeScript as Primary Language | Accepted | 2026-08-06 |
 | [ADR-E005](ecosystem/ADR-E005-api-response-envelope.md) | Unified API Response Envelope | Accepted | 2026-08-06 |
 | [ADR-E006](ecosystem/ADR-E006-logging-format.md) | Structured JSON Logging Standard | Accepted | 2026-08-06 |
+| [ADR-E007](ecosystem/ADR-E007-service-implementation-sequence.md) | Canonical Service Implementation Sequence | Accepted | 2026-08-06 |
 
 ## Internal ADR Index
 
@@ -53,5 +54,5 @@ The ADR format is defined in `standards/architecture/adr-format.md`.
 
 Numbers are never reused. A rejected ADR retains its number with `Status: Rejected`. If a decision is revisited, a new ADR supersedes the original.
 
-Next available ecosystem number: `ADR-E007`
+Next available ecosystem number: `ADR-E008`
 Next available internal number: `ADR-T004`
