@@ -28,6 +28,7 @@
 | [New Service Lifecycle](guides/new-service-lifecycle.md) | Complete path from proposal to implementation authorization |
 | [How to Consume Standards](guides/how-to-consume-standards.md) | Three consumption mechanisms: reference, copy, dependency |
 | [How to Scaffold a Service](guides/how-to-scaffold-a-service.md) | Using scaffold-service.sh, fill-in order, initial commit |
+| [How to Publish Tooling](guides/how-to-publish-tooling.md) | Releasing @janus/* packages to GitHub Packages — tagging, versioning, notification |
 | [How to Write a Standard](guides/how-to-write-a-standard.md) | Format, depth, RFC submission |
 | [How to Write a Template](guides/how-to-write-a-template.md) | Placeholder conventions, template metadata |
 | [Compliance Checking Guide](guides/compliance-checking-guide.md) | Running and interpreting validate-compliance.sh |

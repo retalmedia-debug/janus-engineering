@@ -1,0 +1,129 @@
+name: Publish @janus Tooling Packages
+
+on:
+  push:
+    tags:
+      - 'tooling/v*'
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: 'Dry run — build and validate but do not publish'
+        required: false
+        default: 'false'
+        type: boolean
+
+permissions:
+  contents: read
+  packages: write
+
+jobs:
+  validate:
+    name: Pre-publish Validation
+    runs-on: ubuntu-latest
+    outputs:
+      tag_version: ${{ steps.parse_tag.outputs.version }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+
+      - name: Parse tag version
+        id: parse_tag
+        run: |
+          if [[ "$GITHUB_REF" == refs/tags/tooling/v* ]]; then
+            VERSION="${GITHUB_REF#refs/tags/tooling/v}"
+          else
+            VERSION="0.0.0-dev"
+          fi
+          echo "version=${VERSION}" >> "$GITHUB_OUTPUT"
+          echo "Publishing tooling version: ${VERSION}"
+
+      - name: Verify all package.json files are present
+        run: |
+          for pkg in eslint-config-janus tsconfig-janus prettier-config-janus commitlint-config-janus; do
+            if [[ ! -f "tooling/${pkg}/package.json" ]]; then
+              echo "FAIL: tooling/${pkg}/package.json not found"
+              exit 1
+            fi
+            echo "OK: tooling/${pkg}/package.json"
+          done
+
+      - name: Verify all packages have matching version
+        run: |
+          TAG_VERSION="${{ steps.parse_tag.outputs.version }}"
+          if [[ "$TAG_VERSION" == "0.0.0-dev" ]]; then
+            echo "workflow_dispatch — skipping version check"
+            exit 0
+          fi
+          FAILURES=0
+          for pkg in eslint-config-janus tsconfig-janus prettier-config-janus commitlint-config-janus; do
+            PKG_VERSION=$(node -p "require('./tooling/${pkg}/package.json').version")
+            if [[ "${PKG_VERSION}" != "${TAG_VERSION}" ]]; then
+              echo "FAIL: tooling/${pkg}/package.json version (${PKG_VERSION}) does not match tag (${TAG_VERSION})"
+              FAILURES=$((FAILURES + 1))
+            else
+              echo "OK: tooling/${pkg} version ${PKG_VERSION}"
+            fi
+          done
+          if [[ "${FAILURES}" -gt 0 ]]; then
+            echo ""
+            echo "Bump all package.json versions to ${TAG_VERSION} before tagging."
+            exit 1
+          fi
+
+      - name: Verify CHANGELOG entries exist
+        run: |
+          TAG_VERSION="${{ steps.parse_tag.outputs.version }}"
+          if [[ "$TAG_VERSION" == "0.0.0-dev" ]]; then
+            exit 0
+          fi
+          FAILURES=0
+          for pkg in eslint-config-janus tsconfig-janus prettier-config-janus commitlint-config-janus; do
+            if [[ ! -f "tooling/${pkg}/CHANGELOG.md" ]]; then
+              echo "FAIL: tooling/${pkg}/CHANGELOG.md missing"
+              FAILURES=$((FAILURES + 1))
+              continue
+            fi
+            if ! grep -q "\[${TAG_VERSION}\]" "tooling/${pkg}/CHANGELOG.md"; then
+              echo "WARN: tooling/${pkg}/CHANGELOG.md has no entry for ${TAG_VERSION}"
+            else
+              echo "OK: tooling/${pkg}/CHANGELOG.md has entry for ${TAG_VERSION}"
+            fi
+          done
+          if [[ "${FAILURES}" -gt 0 ]]; then
+            exit 1
+          fi
+
+  publish:
+    name: Publish ${{ matrix.package }}
+    runs-on: ubuntu-latest
+    needs: validate
+    strategy:
+      fail-fast: false
+      matrix:
+        package:
+          - eslint-config-janus
+          - tsconfig-janus
+          - prettier-config-janus
+          - commitlint-config-janus
+    steps:
+      - name: Checkout
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+
+      - name: Setup Node.js
+        uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
+        with:
+          node-version: '20'
+          registry-url: 'https://npm.pkg.github.com'
+          scope: '@janus'
+
+      - name: Publish ${{ matrix.package }}
+        working-directory: tooling/${{ matrix.package }}
+        run: |
+          if [[ "${{ github.event.inputs.dry_run }}" == "true" ]]; then
+            echo "Dry run — would publish tooling/${{ matrix.package }}"
+            npm pack --dry-run
+          else
+            npm publish
+          fi
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}

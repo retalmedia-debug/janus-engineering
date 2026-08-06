@@ -8,13 +8,24 @@
 
 ## Current Package
 
-**PKG-005 — Tooling Publication Pipeline**
+**PKG-006 — ATLAS Compliance Update**
 **Status:** In Progress
 **Started:** 2026-08-06
 
 ---
 
 ## Completed Packages
+
+### PKG-005 — Tooling Publication Pipeline
+**Completed:** 2026-08-06
+
+Deliverables:
+- `.github/workflows/publish-tooling.yml` — Tag-triggered GitHub Actions workflow publishing all four @janus/* packages to GitHub Packages. Pre-publish validation (version matching, CHANGELOG entries). Matrix publish strategy. Dry-run support via workflow_dispatch.
+- `tooling/eslint-config-janus/CHANGELOG.md` — Package changelog with v1.0.0 entry
+- `tooling/tsconfig-janus/CHANGELOG.md` — Package changelog with v1.0.0 entry
+- `tooling/prettier-config-janus/CHANGELOG.md` — Package changelog with v1.0.0 entry
+- `tooling/commitlint-config-janus/CHANGELOG.md` — Package changelog with v1.0.0 entry
+- `docs/guides/how-to-publish-tooling.md` — Complete release guide covering versioning decision, tagging, workflow monitoring, service notification, dry-run testing
 
 ### PKG-004 — Cross-Reference, Classification, and Gap Resolution
 **Completed:** 2026-08-06
@@ -90,11 +101,11 @@ Deliverables:
 
 ## Current Objective
 
-Build the tooling publication pipeline:
-- GitHub Actions publish workflow for @janus/* packages to GitHub Packages
-- CHANGELOG.md per tooling package
-- Version automation (tag-triggered publish)
-- Peer dependency validation documentation
+Update ATLAS (atlas-v1) to reference janus-engineering standards:
+- Update atlas-v1/CLAUDE.md to reference janus-engineering@1.0.0
+- Create atlas-v1/.janus-compliance.yaml
+- Apply missing governance/architecture documents from janus-engineering template
+- Cross-reference ADR-0001 in atlas-v1 with ADR-E001 in janus-engineering
 
 ---
 

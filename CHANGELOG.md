@@ -9,6 +9,23 @@ This repository uses [Semantic Versioning](https://semver.org/spec/v2.0.0.html) 
 
 ## [Unreleased]
 
+### Added — PKG-005 Tooling Publication Pipeline (2026-08-06)
+
+**GitHub Actions**
+- `.github/workflows/publish-tooling.yml` — Tag-triggered publish workflow for all @janus/* packages. Triggered by `tooling/v*` tags. Pre-publish validation: version alignment across all four packages, CHANGELOG entry verification. Matrix strategy publishes all packages in parallel. `workflow_dispatch` with dry-run option for pre-flight testing.
+
+**Tooling CHANGELOGs**
+- `tooling/eslint-config-janus/CHANGELOG.md` — v1.0.0 initial release entry
+- `tooling/tsconfig-janus/CHANGELOG.md` — v1.0.0 initial release entry
+- `tooling/prettier-config-janus/CHANGELOG.md` — v1.0.0 initial release entry (frozen configuration)
+- `tooling/commitlint-config-janus/CHANGELOG.md` — v1.0.0 initial release entry
+
+**Guides**
+- `docs/guides/how-to-publish-tooling.md` — Complete release procedure: versioning decision table, grace periods, step-by-step tagging, workflow monitoring, dry-run instructions, troubleshooting
+
+**Index Updates**
+- `docs/INDEX.md` — `how-to-publish-tooling.md` added to Guides section
+
 ### Added — PKG-004 Gap Resolution (2026-08-06)
 
 **Standards**
