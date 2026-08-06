@@ -47,79 +47,84 @@ Dependencies: PKG-001
 ---
 
 ### PKG-003 — Missing Governance and Standards
-**Status:** IN PROGRESS
+**Status:** COMPLETE
 **Priority:** P0
 **Complexity:** High
-**Started:** 2026-08-06
+**Completed:** 2026-08-06 (commit `8f9572f`)
 
 Deliverables:
-- [ ] `standards/engineering/code-review-standard.md`
-- [ ] `standards/engineering/sprint-governance.md`
-- [ ] `standards/api/event-schema-standard.md`
-- [ ] `standards/operations/alerting-standard.md`
-- [ ] `standards/operations/runbook-standard.md`
-- [ ] `standards/security/secret-management-standard.md`
-- [ ] `standards/architecture/service-sizing-guidance.md`
-- [ ] `docs/governance/cross-service-integration-governance.md`
-- [ ] `docs/governance/incident-management-policy.md`
-- [ ] `docs/governance/jac-operating-procedures.md`
-- [ ] `docs/governance/service-deprecation-playbook.md`
-- [ ] `docs/guides/how-to-scaffold-a-service.md`
-- [ ] `templates/documents/rfc/RFC-TEMPLATE.md`
-- [ ] `templates/documents/post-mortem/POST-MORTEM-TEMPLATE.md`
-- [ ] `templates/documents/incident-report/INCIDENT-REPORT-TEMPLATE.md`
+- [x] `standards/engineering/code-review-standard.md`
+- [x] `standards/engineering/sprint-governance.md`
+- [x] `standards/api/event-schema-standard.md`
+- [x] `standards/operations/alerting-standard.md`
+- [x] `standards/operations/runbook-standard.md`
+- [x] `standards/security/secret-management-standard.md`
+- [x] `standards/architecture/service-sizing-guidance.md`
+- [x] `docs/governance/cross-service-integration-governance.md`
+- [x] `docs/governance/incident-management-policy.md`
+- [x] `docs/governance/jac-operating-procedures.md`
+- [x] `docs/governance/service-deprecation-playbook.md`
+- [x] `docs/guides/how-to-scaffold-a-service.md`
+- [x] `templates/documents/rfc/RFC-TEMPLATE.md`
+- [x] `templates/documents/post-mortem/POST-MORTEM-TEMPLATE.md`
+- [x] `templates/documents/incident-report/INCIDENT-REPORT-TEMPLATE.md`
 
 Dependencies: PKG-001, PKG-002
 
 ---
 
 ### PKG-004 — Cross-Reference and Classification Pass
-**Status:** PENDING
+**Status:** COMPLETE
 **Priority:** P1
 **Complexity:** Medium
+**Completed:** 2026-08-06 (commit `49b8546`)
 
 Deliverables:
-- [ ] Add [JES] classification header to all standards
-- [ ] Add [JTS] classification header to all templates
-- [ ] Verify all cross-document links resolve
-- [ ] Verify no duplicate requirements exist across standards
-- [ ] Verify `standards/INDEX.md` matches actual files
-- [ ] Verify `templates/INDEX.md` matches actual files
-- [ ] Update `CHANGELOG.md` with all PKG-003 additions
-- [ ] Suite version bump (MINOR — new standards added)
+- [x] [JES] classification header added to all 26 original standards
+- [x] `standards/operations/observability-standard.md` — unified three-pillar standard (new)
+- [x] `adr/ecosystem/ADR-E008-supabase-as-database-platform.md` — formalizes platform decision
+- [x] Scaffold template gaps resolved: package.json, .nvmrc, docs/INDEX.md, event-catalog.md, integration-request.md
+- [x] `standards/INDEX.md` updated to 34 standards
+- [x] `templates/INDEX.md` updated with new scaffold files
+- [x] All 4 tooling package READMEs written
+- [x] `validate-compliance.sh` extended with secret management and observability checks
 
 Dependencies: PKG-003
 
 ---
 
 ### PKG-005 — Tooling Package Implementations
-**Status:** PENDING
+**Status:** COMPLETE
 **Priority:** P1
 **Complexity:** High
+**Completed:** 2026-08-06 (commit `21336e2`)
 
-Currently `@janus/eslint-config`, `@janus/tsconfig`, `@janus/prettier-config`, `@janus/commitlint-config` exist as stubs with `package.json` and config files. Full publication requires:
-- [ ] GitHub Actions workflow for publishing to GitHub Packages
-- [ ] `README.md` for each package with installation instructions
-- [ ] `CHANGELOG.md` per package
-- [ ] Version automation (tag-triggered publish)
-- [ ] Peer dependency validation tests
+- [x] `.github/workflows/publish-tooling.yml` — tag-triggered (tooling/v*) GitHub Actions publish workflow
+- [x] `README.md` for each of 4 packages (completed in PKG-004)
+- [x] `CHANGELOG.md` for each of 4 packages
+- [x] Version automation (tag-triggered publish, version alignment validation)
+- [x] `docs/guides/how-to-publish-tooling.md` — complete release guide
+
+Note: Peer dependency validation tests deferred to PKG-008 (post-baseline). Publish workflow includes dry-run capability.
 
 Dependencies: PKG-003
 
 ---
 
 ### PKG-006 — ATLAS v1 Compliance Update
-**Status:** PENDING
+**Status:** COMPLETE
 **Priority:** P1
 **Complexity:** Low
+**Completed:** 2026-08-06
 
-`atlas-v1` is the first consumer and must declare compliance with `janus-engineering@1.0.0`:
-- [ ] Update `atlas-v1/CLAUDE.md` to reference `janus-engineering@1.0.0`
-- [ ] Create `atlas-v1/.janus-compliance.yaml`
-- [ ] Update `atlas-v1/docs/architecture/adr/ADR-0001` to reference `ADR-E001`
-- [ ] Apply missing governance/architecture documents from template
+- [x] `atlas-v1/CLAUDE.md` — filled with janus-engineering@1.0.0 reference and full ATLAS context
+- [x] `atlas-v1/.janus-compliance.yaml` — created
+- [x] `atlas-v1/docs/architecture/adr/ADR-0001` — Ecosystem Cross-Reference section added (ADR-E001 + roadmap)
+- [x] 9 missing template documents applied: domain-model, system-context, threat-model, onboarding, data-privacy, escalation-matrix, observability-strategy, incident-response-runbook, error-catalog
+- [x] `atlas-v1/docs/INDEX.md` — updated with all new docs + Ecosystem Standards section
+- [x] `atlas-v1/CHANGELOG.md` — service changelog created
 
-Dependencies: PKG-003 (compliance check must pass)
+Dependencies: PKG-003
 
 ---
 
@@ -150,8 +155,10 @@ Dependencies: PKG-005
 
 ## Risks
 
-| Risk | Package | Severity |
-|---|---|---|
-| No cross-service integration governance before first inter-service connection | PKG-003 | High |
-| No ecosystem incident management before GCS enters production | PKG-003 | High |
-| @janus tooling packages are stubs — services cannot install them until PKG-005 | PKG-005 | Medium |
+| Risk | Package | Severity | Status |
+|---|---|---|---|
+| No cross-service integration governance before first inter-service connection | PKG-003 | High | Resolved |
+| No ecosystem incident management before GCS enters production | PKG-003 | High | Resolved |
+| @janus tooling packages are stubs — services cannot install them until PKG-005 | PKG-005 | Medium | Resolved — publish workflow ready; CSA must push tooling/v1.0.0 tag |
+| GCS domain brief not filed — PKG-007 is blocked | PKG-007 | Medium | Open |
+| Suite version not bumped to 1.1.0 despite 8 new standards post-v1.0.0 | — | Low | Open — CSA to decide when to cut 1.1.0 |

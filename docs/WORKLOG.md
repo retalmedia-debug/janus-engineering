@@ -8,13 +8,32 @@
 
 ## Current Package
 
-**PKG-006 — ATLAS Compliance Update**
-**Status:** In Progress
-**Started:** 2026-08-06
+**All packages complete. Platform at v1.0.0 baseline.**
+**Status:** Platform Engineering Phase Complete
+**Completed:** 2026-08-06
 
 ---
 
 ## Completed Packages
+
+### PKG-006 — ATLAS Compliance Update
+**Completed:** 2026-08-06
+
+Deliverables (in atlas-v1):
+- `CLAUDE.md` — Filled with janus-engineering@1.0.0 reference, commit scopes, domain invariants, technology stack
+- `.janus-compliance.yaml` — JANUS compliance declaration (suite version 1.0.0, sequence #1)
+- `docs/architecture/domain-model.md` — Domain entity template with ATLAS geo-intelligence invariants
+- `docs/architecture/system-context.md` — C4 Level 1 system context within JANUS ecosystem
+- `docs/governance/onboarding.md` — Prerequisites, tool versions, first-time setup
+- `docs/governance/data-privacy.md` — Data classification tiers, PII policy, breach response
+- `docs/governance/escalation-matrix.md` — Contact matrix by category and severity
+- `docs/security/threat-model.md` — STRIDE analysis stub (assets, threats, mitigations)
+- `docs/operations/observability-strategy.md` — Three-pillar plan, ATLAS-specific metrics, pre-production gate
+- `docs/operations/incident-response-runbook.md` — P0–P3 severity, common ATLAS incidents, post-incident
+- `docs/api/error-catalog.md` — Canonical ATLAS error codes (ATLAS_* prefix), unified envelope
+- `docs/architecture/adr/ADR-0001` — Ecosystem Cross-Reference section added (links ADR-E001, ecosystem roadmap)
+- `docs/INDEX.md` — All 9 new docs indexed; "Ecosystem Standards" section with janus-engineering references
+- `CHANGELOG.md` — Service changelog created with PKG-006 and v0.1.0 entries
 
 ### PKG-005 — Tooling Publication Pipeline
 **Completed:** 2026-08-06
@@ -101,11 +120,7 @@ Deliverables:
 
 ## Current Objective
 
-Update ATLAS (atlas-v1) to reference janus-engineering standards:
-- Update atlas-v1/CLAUDE.md to reference janus-engineering@1.0.0
-- Create atlas-v1/.janus-compliance.yaml
-- Apply missing governance/architecture documents from janus-engineering template
-- Cross-reference ADR-0001 in atlas-v1 with ADR-E001 in janus-engineering
+Platform engineering phase complete. Next work is GCS onboarding (PKG-007), which is blocked on the GCS domain brief (Phase 0, Gate 0.1).
 
 ---
 
@@ -113,38 +128,29 @@ Update ATLAS (atlas-v1) to reference janus-engineering standards:
 
 | Risk | Severity | Status |
 |---|---|---|
-| GCS position in build roadmap unconfirmed | Low | Open — architect to confirm at next interaction |
-| APOLLO, HERMES, CRAT domains undefined — registry entries are stubs | Low | Expected at this stage; domains defined when services enter Phase 0 |
-| No alerting standard exists — services will implement ad hoc | Medium | Addressed in PKG-003 |
-| No cross-service integration governance — first inter-service integration will be unguided | High | Addressed in PKG-003 |
-| No ecosystem-level incident management policy — P0 escalation path is service-local only | High | Addressed in PKG-003 |
-| Standards lack [JES]/[JTS] classification metadata | Low | Retrofitting deferred — new documents include classification; existing documents tagged in PKG-004 |
+| GCS domain brief not filed — PKG-007 cannot begin | Medium | Open — architect to file Phase 0 brief when GCS is ready |
+| APOLLO, HERMES, CRAT domains undefined | Low | Expected; domains defined when each service enters Phase 0 |
+| VENUS, APOLLO, HERMES, CRONOS, HERA, AURUS, NARCOS positions 3–10 have no domain briefs | Low | Expected; sequence is locked, briefs filed at each service's Phase 0 |
+| @janus/* tooling packages are publication-ready but not yet published to GitHub Packages | Medium | Publish workflow exists; CSA must push tooling/v1.0.0 tag to trigger |
+| atlas-v1 threat model and domain model are stubs — require CSA fill-in before Phase 4 | Low | [[FILL]] sections flagged; cannot be completed without domain knowledge |
 
 ---
 
-## Architectural Decisions (in this session)
+## Architectural Decisions
 
 | Decision | Rationale |
 |---|---|
-| Service build order established as governance document, not ADR | ADRs record technology decisions; build order is a strategic planning document. The distinction matters because build order can evolve without the ADR lifecycle overhead. |
-| GCS retained in registry with TBD position | Business input required to place GCS in the mandatory sequence. Blocking the build would be worse than deferring placement. |
-| APOLLO, HERMES, CRAT added as `not-started` services | Service names are known; domains are not. Registering stub entries prevents orphan services and triggers proper Phase 0 intake. |
+| Service build order established as governance document (not only ADR) | ADRs record technology decisions; ADR-E007 formalizes the sequence; governance doc provides human-readable rationale and dependency chain. |
+| Supabase as ecosystem default formalized in ADR-E008 | The decision was implicit in PKG-001 tooling; ADR-E008 makes the opt-out path explicit so services with different requirements know how to deviate. |
+| atlas-v1 compliance update targets documentation layer only | Per CLAUDE.md: implementation (Phase 6) has not been authorized; PKG-006 brings the documentation layer to compliance. Application code begins only after Phase 5 gate. |
 
 ---
 
-## Pending Work
+## Pending Work (PKG-007+)
 
 | Item | Priority | Blocker |
 |---|---|---|
-| Confirm GCS position in build order | High | Requires architect input |
-| Define domains for APOLLO, HERMES, CRAT | Medium | Requires Phase 0 domain briefs |
-| Retrofit [JES]/[JTS] classification to existing standards | Low | None |
-| Create `docs/guides/how-to-scaffold-a-service.md` | Medium | None |
-| Create JAC operating procedures | Medium | None |
-| Create service deprecation playbook | Medium | None |
-
----
-
-## Next Priority
-
-After PKG-003: PKG-004 — Consistency pass, cross-reference validation, and classification retrofitting across all existing documents.
+| File GCS Phase 0 domain brief | High | Requires architect business input |
+| Push tooling/v1.0.0 tag to trigger @janus/* publish | Medium | CSA action — git tag push, not code |
+| Fill [[FILL]] sections in atlas-v1 domain model, system context, threat model | Medium | Requires ATLAS domain brief (architecture phase) |
+| Suite version bump to 1.1.0 (8 new standards added post-v1.0.0) | Low | After all PKG-006 work is merged |

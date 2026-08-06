@@ -9,6 +9,40 @@ This repository uses [Semantic Versioning](https://semver.org/spec/v2.0.0.html) 
 
 ## [Unreleased]
 
+### Added — PKG-006 ATLAS Compliance Update (2026-08-06)
+
+Changes are in the `atlas-v1` repository (tracked separately), recorded here for ecosystem traceability.
+
+**ATLAS Compliance Artifacts**
+- `atlas-v1/CLAUDE.md` — Filled; references janus-engineering@1.0.0; contains ATLAS commit scopes, domain invariants, technology stack, RLS policy, geospatial data standard
+- `atlas-v1/.janus-compliance.yaml` — Compliance declaration: suite version 1.0.0, implementation_sequence: 1
+- `atlas-v1/CHANGELOG.md` — Service changelog created (was empty)
+
+**ATLAS Architecture Documents**
+- `atlas-v1/docs/architecture/domain-model.md` — Domain entity template; geo-intelligence domain invariants
+- `atlas-v1/docs/architecture/system-context.md` — C4 Level 1; ATLAS within JANUS; external actor registry
+
+**ATLAS Governance Documents**
+- `atlas-v1/docs/governance/onboarding.md` — Tool prerequisites, setup, first-contribution guide
+- `atlas-v1/docs/governance/data-privacy.md` — Four-tier data classification; PII policy; breach response
+- `atlas-v1/docs/governance/escalation-matrix.md` — Contact matrix by category (architecture, security, incidents)
+
+**ATLAS Security Documents**
+- `atlas-v1/docs/security/threat-model.md` — STRIDE analysis stub; assets, threat registry, mitigations
+
+**ATLAS Operations Documents**
+- `atlas-v1/docs/operations/observability-strategy.md` — Three-pillar implementation plan; ATLAS-specific metrics; pre-production gate checklist
+- `atlas-v1/docs/operations/incident-response-runbook.md` — Severity table; common ATLAS incidents with diagnosis/recovery steps
+
+**ATLAS API Documents**
+- `atlas-v1/docs/api/error-catalog.md` — ATLAS_* error codes; unified error envelope format
+
+**ADR Cross-Reference**
+- `atlas-v1/docs/architecture/adr/ADR-0001` — Ecosystem Cross-Reference section; links ADR-E001 in janus-engineering and canonical service roadmap
+
+**Index Update**
+- `atlas-v1/docs/INDEX.md` — All 9 new documents indexed; new "Ecosystem Standards" section with janus-engineering references
+
 ### Added — PKG-005 Tooling Publication Pipeline (2026-08-06)
 
 **GitHub Actions**

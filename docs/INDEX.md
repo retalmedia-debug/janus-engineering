@@ -45,3 +45,4 @@
 |---|---|
 | [WORKLOG.md](WORKLOG.md) | Architect worklog — current package, risks, decisions |
 | [ROADMAP.md](ROADMAP.md) | Engineering package roadmap with status and dependencies |
+| [FINAL_ENGINEERING_REPORT.md](FINAL_ENGINEERING_REPORT.md) | v1.0.0 completion report — platform inventory, service registry, deferred items, CSA actions |
