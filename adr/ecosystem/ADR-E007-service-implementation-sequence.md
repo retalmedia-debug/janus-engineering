@@ -1,11 +1,11 @@
 # ADR-E007: Canonical Service Implementation Sequence
 
 **Date:** 2026-08-06
-**Status:** Accepted
+**Status:** Superseded
 **Decider:** JANUS Principal Architect (Mr. Don)
 **Consulted:** JANUS Architecture Council (founding session)
 **Supersedes:** _(none)_
-**Superseded by:** _(none — filled in if this ADR is later superseded)_
+**Superseded by:** ADR-E009 — JANUS Platform, Intelligence Domain Ownership, and Canonical System Sequence
 
 ---
 

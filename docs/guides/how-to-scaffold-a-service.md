@@ -41,7 +41,7 @@ cd /path/to/janus-engineering
 |---|---|---|
 | `--name` | Service display name (SCREAMING_CAPS) | `GCS` |
 | `--repo` | Repository name | `gcs-v1` |
-| `--domain` | One-line domain description | `Ground Control System` |
+| `--domain` | One-line domain description | `Strategy Intelligence` |
 | `--csa` | Full name of the Chief Software Architect | `Jane Smith` |
 | `--suite-version` | JANUS suite version to stamp in templates | `1.0.0` |
 | `--target-dir` | Parent directory where the repo will be created | `/Users/you/projects/janus` |

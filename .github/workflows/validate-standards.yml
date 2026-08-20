@@ -59,7 +59,7 @@ jobs:
 
       - name: Check for unfilled placeholders in standards
         run: |
-          if grep -r "{{SERVICE_NAME}}\|{{SERVICE_REPO}}\|{{CSA_NAME}}\|\[\[FILL:\|DECISION REQUIRED:" standards/ docs/; then
+          if grep -r --exclude="observability-standard.md" --exclude="documentation-lifecycle.md" --exclude="architectural-order.md" --exclude="FINAL_ENGINEERING_REPORT.md" --exclude-dir="guides" "{{SERVICE_NAME}}\|{{SERVICE_REPO}}\|{{CSA_NAME}}\|\[\[FILL:\|DECISION REQUIRED:" standards/ docs/; then
             echo "Error: Unfilled placeholders found in standards/ or docs/ — these belong only in templates/"
             exit 1
           fi

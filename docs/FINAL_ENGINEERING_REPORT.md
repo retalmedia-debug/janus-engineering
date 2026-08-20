@@ -1,11 +1,16 @@
 # JANUS Engineering Platform — Final Engineering Report
 
+**Version:** 1.0.0
+**Status:** Historical Baseline
 **Date:** 2026-08-06
 **Author:** Principal Architect (Mr. Don)
 **Phase:** Platform Engineering Complete — v1.0.0 Baseline
 **Classification:** Internal
 
 ---
+
+> **Supersession Notice (2026-08-19):** Current governance is defined by ADR-E009; ADR-E007 and legacy GCS/CRAT/NARCOS references below are historical only.
+
 
 ## Executive Summary
 

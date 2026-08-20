@@ -9,6 +9,13 @@ This repository uses [Semantic Versioning](https://semver.org/spec/v2.0.0.html) 
 
 ## [Unreleased]
 
+### Changed — ADR-E009 Governance Patch (2026-08-19)
+
+- Established JANUS Platform as Position 0 for Governance & Orchestration.
+- Defined the canonical ten Intelligence Systems and their domain ownership.
+- Superseded ADR-E007 with ADR-E009 for platform positioning and canonical system sequence.
+- Propagated the new governance model across the registry, roadmap, ecosystem map, and active guidance.
+
 ### Added — PKG-006 ATLAS Compliance Update (2026-08-06)
 
 Changes are in the `atlas-v1` repository (tracked separately), recorded here for ecosystem traceability.

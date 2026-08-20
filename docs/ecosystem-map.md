@@ -11,20 +11,12 @@
 
 The JANUS ecosystem is a multi-system intelligence platform. Each system is an independent service with its own domain, data, deployment lifecycle, and team.
 
-```
-┌───────────────────────────────────────────────────────────────────┐
-│                        JANUS Ecosystem                            │
-│                                                                   │
-│  ①ATLAS    ②GCS     ③VENUS   ④APOLLO  ⑤HERMES                  │
-│  Geo Intel  Control   TBD      TBD      TBD                      │
-│                                                                   │
-│  ⑥CRONOS   ⑦CRAT    ⑧HERA    ⑨AURUS   ⑩NARCOS                 │
-│  TBD        TBD      TBD      TBD      TBD                       │
-│                                                                   │
-│  ─────────────────────────────────────────────────               │
-│                  janus-engineering                                │
-│            (governance, not a runtime service)                    │
-└───────────────────────────────────────────────────────────────────┘
+```text
+JANUS PLATFORM — POSITION 0
+Governance & Orchestration
+        ↓
+01 ATLAS | 02 GCS | 03 VENUS | 04 APOLLO | 05 HERMES
+06 CRONOS | 07 NARCOS | 08 HERA | 09 AURUS | 10 CRAT
 ```
 Numbers indicate canonical implementation sequence. See `docs/governance/ecosystem-service-roadmap.md`.
 
@@ -34,16 +26,16 @@ Numbers indicate canonical implementation sequence. See `docs/governance/ecosyst
 
 | # | Service | Repository | Domain | Status | CSA |
 |---|---|---|---|---|---|
-| 1 | ATLAS | `atlas-v1` | Geo Intelligence & External Intelligence | governance-establishment | Mr. Don |
-| 2 | GCS | `gcs-v1` | Ground Control System (TBD — Phase 0 brief required) | not-started | TBD |
-| 3 | VENUS | `venus-v1` | TBD — Phase 0 brief required | not-started | TBD |
-| 4 | APOLLO | `apollo-v1` | TBD — Phase 0 brief required | not-started | TBD |
-| 5 | HERMES | `hermes-v1` | TBD — Phase 0 brief required | not-started | TBD |
-| 6 | CRONOS | `cronos-v1` | TBD — Phase 0 brief required | not-started | TBD |
-| 7 | CRAT | `crat-v1` | TBD — Phase 0 brief required | not-started | TBD |
-| 8 | HERA | `hera-v1` | TBD — Phase 0 brief required | not-started | TBD |
-| 9 | AURUS | `aurus-v1` | TBD — Phase 0 brief required | not-started | TBD |
-| 10 | NARCOS | `narcos-v1` | TBD — Phase 0 brief required | not-started | TBD |
+| 1 | ATLAS | `atlas-v1` | General Intelligence | governance-establishment | Mr. Don |
+| 2 | GCS | `gcs-v1` | Strategy Intelligence | not-started | TBD |
+| 3 | VENUS | `venus-v1` | Operations Intelligence | not-started | TBD |
+| 4 | APOLLO | `apollo-v1` | Media Intelligence | not-started | TBD |
+| 5 | HERMES | `hermes-v1` | Content Scheduling & Publishing Intelligence | not-started | TBD |
+| 6 | CRONOS | `cronos-v1` | Managed Meta Insights Intelligence | not-started | TBD |
+| 7 | NARCOS | `narcos-v1` | Sales Intelligence | not-started | TBD |
+| 8 | HERA | `hera-v1` | Human Resources Intelligence | not-started | TBD |
+| 9 | AURUS | `aurus-v1` | Financial Intelligence | not-started | TBD |
+| 10 | CRAT | `crat-v1` | Reporting Intelligence | not-started | TBD |
 
 Authoritative registry: `services/registry.yaml`
 
