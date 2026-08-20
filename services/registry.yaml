@@ -3,6 +3,17 @@
 # Add services via PR using .github/ISSUE_TEMPLATE/service-registration.md
 # Implementation order is governed by docs/governance/ecosystem-service-roadmap.md
 
+platform:
+  name: JANUS
+  identifier: janus
+  repository: janus-platform
+  position: 0
+  type: platform
+  domain: Governance & Orchestration
+  description: Shared ecosystem platform for authentication, identity, access, registry, navigation, settings, routing, handoff, governance, and orchestration
+  csa: Mr. Don
+  status: bootstrapping
+
 services:
 
   # ─── Position 1 ─────────────────────────────────────────────────────────────
@@ -10,7 +21,7 @@ services:
     identifier: atlas
     repository: atlas-v1
     implementation_sequence: 1
-    domain: Geo Intelligence and External Intelligence
+    domain: General Intelligence
     description: Geospatial monitoring, geofence management, alert processing, and external intelligence ingestion
     csa: Mr. Don
     suite_version: "1.0.0"
@@ -28,8 +39,8 @@ services:
     identifier: gcs
     repository: gcs-v1
     implementation_sequence: 2
-    domain: Reserved — Ground Control System (to be defined in Phase 0 domain brief)
-    description: Platform-layer control plane service. Required operational before intelligence domain services at positions 3-10 may begin implementation.
+    domain: Strategy Intelligence
+    description: Strategy intelligence service for creating, developing, evaluating, and evolving institutional strategies.
     csa: TBD
     suite_version: null
     status: not-started
@@ -37,14 +48,14 @@ services:
     technologies: {}
     integrations: []
     compliance_file: null
-    notes: Position 2 reflects platform dependency. GCS domain brief required at Phase 0 before implementation begins.
+    notes: Position 2. GCS is Strategy Intelligence; JANUS Platform owns ecosystem orchestration and platform control.
 
   # ─── Position 3 ─────────────────────────────────────────────────────────────
   - name: VENUS
     identifier: venus
     repository: venus-v1
     implementation_sequence: 3
-    domain: Reserved
+    domain: Operations Intelligence
     description: TBD — domain brief required at Phase 0
     csa: TBD
     suite_version: null
@@ -59,7 +70,7 @@ services:
     identifier: apollo
     repository: apollo-v1
     implementation_sequence: 4
-    domain: Reserved
+    domain: Media Intelligence
     description: TBD — domain brief required at Phase 0
     csa: TBD
     suite_version: null
@@ -75,7 +86,7 @@ services:
     identifier: hermes
     repository: hermes-v1
     implementation_sequence: 5
-    domain: Reserved
+    domain: Content Scheduling & Publishing Intelligence
     description: TBD — domain brief required at Phase 0
     csa: TBD
     suite_version: null
@@ -91,7 +102,7 @@ services:
     identifier: cronos
     repository: cronos-v1
     implementation_sequence: 6
-    domain: Reserved
+    domain: Managed Meta Insights Intelligence
     description: TBD — domain brief required at Phase 0
     csa: TBD
     suite_version: null
@@ -101,13 +112,13 @@ services:
     integrations: []
     compliance_file: null
 
-  # ─── Position 7 ─────────────────────────────────────────────────────────────
-  - name: CRAT
-    identifier: crat
-    repository: crat-v1
+  # ─── Position 7 ────────────────────────────────────────────────────────────
+  - name: NARCOS
+    identifier: narcos
+    repository: narcos-v1
     implementation_sequence: 7
-    domain: Reserved
-    description: TBD — domain brief required at Phase 0
+    domain: Sales Intelligence
+    description: Sales intelligence service for leads, opportunities, pipelines, conversion intelligence, commercial performance, and sales forecasting.
     csa: TBD
     suite_version: null
     status: not-started
@@ -115,14 +126,13 @@ services:
     technologies: {}
     integrations: []
     compliance_file: null
-    notes: New service. Not in original ecosystem registry. Added 2026-08-06 per Architecture Council directive. Independent of GCS — not a replacement.
 
   # ─── Position 8 ─────────────────────────────────────────────────────────────
   - name: HERA
     identifier: hera
     repository: hera-v1
     implementation_sequence: 8
-    domain: Reserved
+    domain: Human Resources Intelligence
     description: TBD — domain brief required at Phase 0
     csa: TBD
     suite_version: null
@@ -137,7 +147,7 @@ services:
     identifier: aurus
     repository: aurus-v1
     implementation_sequence: 9
-    domain: Reserved
+    domain: Financial Intelligence
     description: TBD — domain brief required at Phase 0
     csa: TBD
     suite_version: null
@@ -147,13 +157,13 @@ services:
     integrations: []
     compliance_file: null
 
-  # ─── Position 10 ────────────────────────────────────────────────────────────
-  - name: NARCOS
-    identifier: narcos
-    repository: narcos-v1
+  # ─── Position 10 ─────────────────────────────────────────────────────────────
+  - name: CRAT
+    identifier: crat
+    repository: crat-v1
     implementation_sequence: 10
-    domain: Reserved
-    description: TBD — domain brief required at Phase 0. Final service in the canonical implementation sequence.
+    domain: Reporting Intelligence
+    description: Reporting intelligence service for composing, generating, rendering, packaging, and managing reports across the JANUS ecosystem.
     csa: TBD
     suite_version: null
     status: not-started
@@ -161,6 +171,7 @@ services:
     technologies: {}
     integrations: []
     compliance_file: null
+    notes: Position 10. CRAT owns report artifacts and reporting workflows; source intelligence remains owned by its authoritative system.
 
 # ── Status Vocabulary ──────────────────────────────────────────────────────────
 #   not-started          — service not yet proposed

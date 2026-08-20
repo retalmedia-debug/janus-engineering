@@ -14,6 +14,18 @@
 
 ---
 
+## Governance Patch — ADR-E009
+
+**Started:** 2026-08-19
+**Status:** In Progress
+
+- Established JANUS Platform as Position 0 for Governance & Orchestration.
+- Defined the canonical ten Intelligence Systems and their authoritative domains.
+- Superseded ADR-E007 for platform positioning and canonical system sequence.
+- Propagating ADR-E009 across active governance documentation and registries.
+
+---
+
 ## Completed Packages
 
 ### PKG-006 — ATLAS Compliance Update

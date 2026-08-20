@@ -7,6 +7,9 @@
 
 ---
 
+> **Supersession Notice (2026-08-19):** Current governance is defined by ADR-E009; ADR-E007 and legacy GCS/CRAT/NARCOS references below are historical only.
+
+
 ## Executive Summary
 
 The JANUS Engineering Platform (`janus-engineering`) has reached its v1.0.0 baseline. All six engineering packages (PKG-001 through PKG-006) are complete. The platform provides the engineering constitution, governance framework, tooling, and compliance infrastructure required for all ten JANUS services to be built correctly and consistently.

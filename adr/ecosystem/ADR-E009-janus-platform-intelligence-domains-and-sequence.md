@@ -1,7 +1,7 @@
 # ADR-E009: JANUS Platform, Intelligence Domain Ownership, and Canonical System Sequence
 
 **Date:** 2026-08-19
-**Status:** Proposed
+**Status:** Accepted
 **Decider:** JANUS Principal Architect (Mr. Don)
 **Consulted:** JANUS Architecture Council
 **Supersedes:** ADR-E007 — Canonical Service Implementation Sequence

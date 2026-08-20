@@ -23,16 +23,16 @@ This document establishes the **canonical implementation sequence** for all JANU
 
 | Position | Service | Repository | Rationale |
 |---|---|---|---|
-| **1** | **ATLAS** | `atlas-v1` | Foundation service. Establishes the engineering platform itself. Every subsequent service is scaffolded using standards validated by ATLAS. |
-| **2** | **GCS** | `gcs-v1` | Ground Control System. Platform-layer service. Required before higher-level intelligence services can operate. Provides foundational control plane capabilities that downstream services depend on. |
-| **3** | **VENUS** | `venus-v1` | Second intelligence domain. Validates that the ecosystem pattern works for a second service with different domain characteristics. Completes the initial platform proof-of-concept. |
-| **4** | **APOLLO** | `apollo-v1` | [[DECISION REQUIRED: Apollo domain brief required at Phase 0]] Third intelligence domain. Requires GCS and VENUS operational to justify Apollo's integration requirements. |
-| **5** | **HERMES** | `hermes-v1` | [[DECISION REQUIRED: Hermes domain brief required at Phase 0]] Messaging or communication-layer service. Position 5 reflects dependency on ATLAS, GCS, VENUS, and APOLLO — likely consumes or orchestrates their data. |
-| **6** | **CRONOS** | `cronos-v1` | Temporal management service. Scheduling, time-series operations, or lifecycle management. Position 6 indicates it orchestrates events produced by the first five services. |
-| **7** | **CRAT** | `crat-v1` | [[DECISION REQUIRED: CRAT domain brief required at Phase 0]] Independent intelligence domain. Position 7 indicates dependency on the full lower stack being operational before CRAT's domain can be meaningfully established. |
-| **8** | **HERA** | `hera-v1` | [[DECISION REQUIRED: Hera domain brief required at Phase 0]] Oversight or management service. Position 8 reflects that it governs or monitors services 1–7. |
-| **9** | **AURUS** | `aurus-v1` | [[DECISION REQUIRED: Aurus domain brief required at Phase 0]] Value or enrichment service. Position 9 reflects it augments or enriches data from the established platform. |
-| **10** | **NARCOS** | `narcos-v1` | [[DECISION REQUIRED: Narcos domain brief required at Phase 0]] Final intelligence domain in the sequence. Position 10 reflects the highest integration dependency — it is built on a complete platform. |
+| **1** | **ATLAS** | `atlas-v1` | General Intelligence - external intelligence acquisition, evidence preservation, structured intelligence, analysis, findings, recommendations, and geospatial intelligence. |
+| **2** | **GCS** | `gcs-v1` | Strategy Intelligence — creation, development, evaluation, and evolution of institutional strategies. |
+| **3** | **VENUS** | `venus-v1` | Operations Intelligence - operational workflows, execution visibility, process state, coordination, performance, and day-to-day operational management intelligence. |
+| **4** | **APOLLO** | `apollo-v1` | Media Intelligence - media assets, media production, media analysis, media activities, media libraries, classification, and media-domain workflows. |
+| **5** | **HERMES** | `hermes-v1` | Content Scheduling & Publishing Intelligence - content calendars, publication planning, scheduling, publishing execution, publication state, and delivery to supported channels. |
+| **6** | **CRONOS** | `cronos-v1` | Managed Meta Insights Intelligence - acquisition, normalization, storage, comparison, and analysis of insights from Meta properties directly managed for clients. |
+| **7** | **NARCOS** | `narcos-v1` | Sales Intelligence - leads, prospects, opportunities, sales pipelines, conversion intelligence, commercial performance, and sales forecasting. |
+| **8** | **HERA** | `hera-v1` | Human Resources Intelligence - workforce records, staffing, roles, employee lifecycle intelligence, HR operations, and approved workforce analytics. |
+| **9** | **AURUS** | `aurus-v1` | Financial Intelligence - financial records, revenue, costs, cash flow, profitability, financial analysis, planning, and forecasting. |
+| **10** | **CRAT** | `crat-v1` | Reporting Intelligence - report composition, generation, rendering, packaging, and lifecycle management across the JANUS ecosystem. |
 
 ---
 
@@ -49,10 +49,10 @@ ATLAS (1) ───────────────────────�
               └─► APOLLO (4) ──────────────────────────────────► Services 5-10
                     └─► HERMES (5) ──────────────────────────► Services 6-10
                           └─► CRONOS (6) ──────────────────► Services 7-10
-                                └─► CRAT (7) ────────────► Services 8-10
+                                └─► NARCOS (7) ──────────► Services 8-10
                                       └─► HERA (8) ────► Services 9-10
                                             └─► AURUS (9) ──► Service 10
-                                                  └─► NARCOS (10)
+                                                  └─► CRAT (10)
 ```
 
 Each service in the sequence:
@@ -70,9 +70,9 @@ ATLAS (Position 1) is the **pilot service**. Its primary purpose is not only to 
 
 No standard is considered production-grade until ATLAS has consumed it.
 
-### GCS as Platform Layer
+### GCS as Strategy Intelligence
 
-GCS (Position 2) occupies the second position because it provides platform-layer capabilities that the intelligence domain services (VENUS, APOLLO, etc.) depend on. GCS must be operational and stable before intelligence services that depend on its capabilities begin implementation.
+GCS (Position 2) owns Strategy Intelligence. It creates, develops, evaluates, and evolves institutional strategies by consuming approved intelligence from other JANUS systems when required. Ecosystem platform control, identity, access, registry, navigation, and orchestration belong to JANUS Platform at Position 0.
 
 ### Intelligence Domain Services (3–10)
 

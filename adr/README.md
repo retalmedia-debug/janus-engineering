@@ -24,8 +24,9 @@ This directory contains ecosystem-level and internal Architecture Decision Recor
 | [ADR-E004](ecosystem/ADR-E004-typescript-primary-language.md) | TypeScript as Primary Language | Accepted | 2026-08-06 |
 | [ADR-E005](ecosystem/ADR-E005-api-response-envelope.md) | Unified API Response Envelope | Accepted | 2026-08-06 |
 | [ADR-E006](ecosystem/ADR-E006-logging-format.md) | Structured JSON Logging Standard | Accepted | 2026-08-06 |
-| [ADR-E007](ecosystem/ADR-E007-service-implementation-sequence.md) | Canonical Service Implementation Sequence | Accepted | 2026-08-06 |
+| [ADR-E007](ecosystem/ADR-E007-service-implementation-sequence.md) | Canonical Service Implementation Sequence | Superseded | 2026-08-06 |
 | [ADR-E008](ecosystem/ADR-E008-supabase-as-database-platform.md) | Supabase as the Ecosystem Database Platform | Accepted | 2026-08-06 |
+| [ADR-E009](ecosystem/ADR-E009-janus-platform-intelligence-domains-and-sequence.md) | JANUS Platform, Intelligence Domain Ownership, and Canonical System Sequence | Accepted | 2026-08-19 |
 
 ## Internal ADR Index
 
@@ -55,5 +56,5 @@ The ADR format is defined in `standards/architecture/adr-format.md`.
 
 Numbers are never reused. A rejected ADR retains its number with `Status: Rejected`. If a decision is revisited, a new ADR supersedes the original.
 
-Next available ecosystem number: `ADR-E009`
+Next available ecosystem number: `ADR-E010`
 Next available internal number: `ADR-T004`
