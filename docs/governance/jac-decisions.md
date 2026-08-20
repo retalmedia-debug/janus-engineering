@@ -1,5 +1,7 @@
 # JAC Decisions Log
 
+**Version:** 1.0.0
+**Status:** Active
 **Owner:** JANUS Principal Architect
 **Last Updated:** 2026-08-06
 

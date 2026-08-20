@@ -1,5 +1,7 @@
 # How to Publish @janus Tooling Packages
 
+**Version:** 1.0.0
+**Status:** Active
 **Owner:** Principal Architect / janus-engineering maintainer
 **Last Updated:** 2026-08-06
 

@@ -1,5 +1,6 @@
 # JANUS Engineering — Architect Worklog
 
+**Version:** 1.0.0
 **Role:** Permanent Chief Software Architect, JANUS Ecosystem
 **Started:** 2026-08-06
 **Mode:** Autonomous Enterprise Build
